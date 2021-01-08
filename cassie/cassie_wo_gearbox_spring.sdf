@@ -72,39 +72,6 @@
       </visual>
     </link>
 
-    <link name="left-roll-reference">
-      <pose frame="">0.021 0.135 1.01 0 1.5708 0</pose>
-      <inertial>
-        <pose frame="">0.000001 0.000001 -0.027063 0 1.57 0</pose>
-        <mass>0.145608</mass>
-        <inertia>
-          <ixx>0.000073735</ixx>
-          <ixy>1.340232e-073</ixy>
-          <ixz>7.241957e-08</ixz>
-          <iyy>7.357073e-05</iyy>
-          <iyz>-7.096017e-08</iyz>
-          <izz>8.262566e-05</izz>
-        </inertia>
-      </inertial>
-      <visual name="left-roll-reference_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.01 0.01 0.01</size>
-          </box>
-        </geometry>
-      </visual>
-    </link>
-
-    <joint name="left-roll-ip" type="revolute">
-      <child>left-roll-reference</child>
-      <parent>pelvis</parent>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
     <joint name="left-roll-op" type="revolute">
       <child>left-hip-roll</child>
       <parent>pelvis</parent>
@@ -119,21 +86,6 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-    </joint>
-
-    <joint name="left-roll-joint" type="gearbox">
-      <child>left-hip-roll</child>
-      <parent>left-roll-reference</parent>
-      <gearbox_reference_body>pelvis</gearbox_reference_body>
-      <gearbox_ratio>0.04</gearbox_ratio>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <axis2>
-        <xyz>1 0 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis2>
     </joint>
 
     <link name='left-hip-yaw'>
@@ -159,39 +111,6 @@
       </visual>
     </link>
 
-    <link name="left-yaw-reference">
-      <pose frame="">-0.049 0.135 1.01 0 0 0</pose>
-      <inertial>
-        <pose frame="">0.000001 0.000001 -0.027063 0 1.57 0</pose>
-        <mass>0.145608</mass>
-        <inertia>
-          <ixx>7.368810e-05</ixx>
-          <ixy>1.340232e-073</ixy>
-          <ixz>7.241957e-08</ixz>
-          <iyy>7.357073e-05</iyy>
-          <iyz>-7.096017e-08</iyz>
-          <izz>0.000082672</izz>
-        </inertia>
-      </inertial>
-      <visual name="left-yaw-reference_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.01 0.01 0.01</size>
-          </box>
-        </geometry>
-      </visual>
-    </link>
-
-    <joint name="left-yaw-ip" type="revolute">
-      <child>left-yaw-reference</child>
-      <parent>left-hip-roll</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
     <joint name="left-yaw-op" type="revolute">
       <child>left-hip-yaw</child>
       <parent>left-hip-roll</parent>
@@ -206,21 +125,6 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-    </joint>
-
-    <joint name="left-yaw-joint" type="gearbox">
-      <child>left-hip-yaw</child>
-      <parent>left-yaw-reference</parent>
-      <gearbox_reference_body>left-hip-roll</gearbox_reference_body>
-      <gearbox_ratio>0.04</gearbox_ratio>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <axis2>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis2>
     </joint>
 
     <link name='left-hip-pitch'>
@@ -255,39 +159,6 @@
       </collision>
     </link>
 
-    <link name="left-pitch-reference">
-      <pose frame="">-0.049 0.135 0.92 0 1.5708 -1.57</pose>
-      <inertial>
-        <pose frame="">-0.000001 -0.000011 0 1.57 1.57 0</pose>
-        <mass>0.272280</mass>
-            <inertia>
-          <ixx>2.288457e-04</ixx>
-          <ixy>6.854960e-07</ixy>
-          <ixz>-4.163281e-08</ixz>
-          <iyy>0.00023115</iyy>
-          <iyz>-9.248118e-07</iyz>
-          <izz>0.00020476</izz>
-        </inertia>
-      </inertial>
-      <visual name="left-pitch-reference_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.01 0.01 0.01</size>
-          </box>
-        </geometry>
-      </visual>
-    </link>
-
-    <joint name="left-pitch-ip" type="revolute">
-      <child>left-pitch-reference</child>
-      <parent>left-hip-yaw</parent>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
     <joint name="left-pitch-op" type="revolute">
       <child>left-hip-pitch</child>
       <parent>left-hip-yaw</parent>
@@ -302,21 +173,6 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-    </joint>
-
-    <joint name="left-pitch-joint" type="gearbox">
-      <child>left-hip-pitch</child>
-      <parent>left-pitch-reference</parent>
-      <gearbox_reference_body>left-hip-yaw</gearbox_reference_body>
-      <gearbox_ratio>0.0625</gearbox_ratio>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <axis2>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis2>
     </joint>
 
     <link name='left-achilles-rod'>
@@ -377,39 +233,6 @@
       </visual>
     </link>
 
-    <link name="left-knee-reference">
-      <pose frame="">-0.049 0.1305 0.8 -1.5708 0.7854 3.1416</pose>
-      <inertial>
-        <pose frame="">-0.000001 -0.000011 0.024425 1.57 1.57 0</pose>
-        <mass>0.272280</mass>
-        <inertia>
-          <ixx>2.288457e-04</ixx>
-          <ixy>6.854960e-07</ixy>
-          <ixz>-4.163281e-08</ixz>
-          <iyy>0.00023115</iyy>
-          <iyz>-9.248118e-07</iyz>
-          <izz>0.00020476</izz>
-        </inertia>
-      </inertial>
-      <visual name="left-knee-reference_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.01 0.01 0.01</size>
-          </box>
-        </geometry>
-      </visual>
-    </link>
-
-    <joint name="left-knee-ip" type="revolute">
-      <parent>left-hip-pitch</parent>
-      <child>left-knee-reference</child>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
     <joint name="left-knee-op" type="revolute">
       <child>left-knee</child>
       <parent>left-hip-pitch</parent>
@@ -422,53 +245,6 @@
         <dynamics>
           <damping>1</damping>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
-    <joint name="left-knee-joint" type="gearbox">
-      <child>left-knee</child>
-      <parent>left-knee-reference</parent>
-      <gearbox_reference_body>left-hip-pitch</gearbox_reference_body>
-      <gearbox_ratio>0.0625</gearbox_ratio>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <axis2>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis2>
-    </joint>
-
-    <link name='left-knee-spring'>
-      <pose>-0.033635 0.1305 0.69882 -1.5708 0.7854 3.1416</pose>
-      <inertial>
-        <pose>0.0836 0.0034 0 0 0 0</pose>
-        <mass>0.186</mass>
-        <inertia>
-          <ixx>5.215e-05</ixx>
-          <iyy>0.00041205</iyy>
-          <izz>0.0003669</izz>
-          <ixy>6.87e-06</ixy>
-          <ixz>0</ixz>
-          <iyz>0</iyz>
-        </inertia>
-      </inertial>
-      <visual name="left-knee-spring_visual">
-        <geometry>
-          <mesh>
-            <uri>model://cassie/meshes/knee-spring.stl</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-
-    <joint name="left-knee-spring-joint" type="revolute">
-      <child>left-knee-spring</child>
-      <parent>left-knee</parent>
-      <axis>
-        <xyz>0.000796 -1 1e-06</xyz>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
@@ -718,39 +494,6 @@
       </collision>
     </link>
 
-    <link name="left-foot-reference">
-      <pose frame="">-0.29886 0.1305 -0.0045361 1.5708 1.3439 0</pose>
-      <inertial>
-        <pose frame="">0.00474 0.02748 -0.00014 0 0 0</pose>
-        <mass>0.001</mass>
-        <inertia>
-          <ixx>9.4e-7</ixx>
-          <ixy>9.4e-9</ixy>
-          <ixz>9.4e-9</ixz>
-          <iyy>9.4e-7</iyy>
-          <iyz>9.4e-9</iyz>
-          <izz>9.4e-6</izz>
-        </inertia>
-      </inertial>
-      <visual name="left-foot-reference_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.01 0.01 0.01</size>
-          </box>
-        </geometry>
-      </visual>
-    </link>
-
-    <joint name="left-foot-ip" type="revolute">
-      <parent>left-tarsus</parent>
-      <child>left-foot-reference</child>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
     <joint name="left-foot-op" type="revolute">
       <child>left-foot</child>
       <parent>left-tarsus</parent>
@@ -765,21 +508,6 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-    </joint>
-
-    <joint name="left-foot-joint" type="gearbox">
-      <child>left-foot</child>
-      <parent>left-foot-reference</parent>
-      <gearbox_reference_body>left-tarsus</gearbox_reference_body>
-      <gearbox_ratio>0.02</gearbox_ratio>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <axis2>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis2>
     </joint>
 
     <link name='right-hip-roll'>
@@ -806,39 +534,6 @@
       </visual>
     </link>
 
-    <link name="right-roll-reference">
-      <pose frame="">0.021 -0.135 1.01 0 1.5708 0</pose>
-      <inertial>
-        <pose frame="">0.000001 0.000001 -0.027063 0 1.57 0</pose>
-        <mass>0.145608</mass>
-        <inertia>
-          <ixx>0.000073735</ixx>
-          <ixy>1.340232e-073</ixy>
-          <ixz>7.241957e-08</ixz>
-          <iyy>7.357073e-05</iyy>
-          <iyz>-7.096017e-08</iyz>
-          <izz>8.262566e-05</izz>
-        </inertia>
-      </inertial>
-      <visual name="right-roll-reference_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.01 0.01 0.01</size>
-          </box>
-        </geometry>
-      </visual>
-    </link>
-
-    <joint name="right-roll-ip" type="revolute">
-      <child>right-roll-reference</child>
-      <parent>pelvis</parent>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
     <joint name="right-roll-op" type="revolute">
       <child>right-hip-roll</child>
       <parent>pelvis</parent>
@@ -853,21 +548,6 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-    </joint>
-
-    <joint name="right-roll-joint" type="gearbox">
-      <child>right-hip-roll</child>
-      <parent>right-roll-reference</parent>
-      <gearbox_reference_body>pelvis</gearbox_reference_body>
-      <gearbox_ratio>0.04</gearbox_ratio>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <axis2>
-        <xyz>1 0 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis2>
     </joint>
 
     <link name='right-hip-yaw'>
@@ -894,39 +574,6 @@
       </visual>
     </link>
 
-    <link name="right-yaw-reference">
-      <pose frame="">-0.049 -0.135 1.01 0 0 0</pose>
-      <inertial>
-        <pose frame="">0.000001 0.000001 -0.027063 0 1.57 0</pose>
-        <mass>0.145608</mass>
-        <inertia>
-          <ixx>7.368810e-05</ixx>
-          <ixy>1.340232e-073</ixy>
-          <ixz>7.241957e-08</ixz>
-          <iyy>7.357073e-05</iyy>
-          <iyz>-7.096017e-08</iyz>
-          <izz>0.000082672</izz>
-        </inertia>
-      </inertial>
-      <visual name="right-yaw-reference_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.01 0.01 0.01</size>
-          </box>
-        </geometry>
-      </visual>
-    </link>
-
-    <joint name="right-yaw-ip" type="revolute">
-      <child>right-yaw-reference</child>
-      <parent>right-hip-roll</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
     <joint name="right-yaw-op" type="revolute">
       <child>right-hip-yaw</child>
       <parent>right-hip-roll</parent>
@@ -941,21 +588,6 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-    </joint>
-
-    <joint name="right-yaw-joint" type="gearbox">
-      <child>right-hip-yaw</child>
-      <parent>right-yaw-reference</parent>
-      <gearbox_reference_body>right-hip-roll</gearbox_reference_body>
-      <gearbox_ratio>0.04</gearbox_ratio>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <axis2>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis2>
     </joint>
 
     <link name='right-hip-pitch'>
@@ -991,39 +623,6 @@
       </collision>
     </link>
 
-    <link name="right-pitch-reference">
-      <pose frame="">-0.049 -0.135 0.92 0 1.5708 -1.57</pose>
-      <inertial>
-        <pose frame="">-0.000001 -0.000011 0 1.57 1.57 0</pose>
-        <mass>0.272280</mass>
-        <inertia>
-          <ixx>2.288457e-04</ixx>
-          <ixy>6.854960e-07</ixy>
-          <ixz>-4.163281e-08</ixz>
-          <iyy>0.00023115</iyy>
-          <iyz>-9.248118e-07</iyz>
-          <izz>0.00020476</izz>
-        </inertia>
-      </inertial>
-      <visual name="right-pitch-reference_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.01 0.01 0.01</size>
-          </box>
-        </geometry>
-      </visual>
-    </link>
-
-    <joint name="right-pitch-ip" type="revolute">
-      <child>right-pitch-reference</child>
-      <parent>right-hip-yaw</parent>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
     <joint name="right-pitch-op" type="revolute">
       <child>right-hip-pitch</child>
       <parent>right-hip-yaw</parent>
@@ -1038,21 +637,6 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-    </joint>
-
-    <joint name="right-pitch-joint" type="gearbox">
-      <child>right-hip-pitch</child>
-      <parent>right-pitch-reference</parent>
-      <gearbox_reference_body>right-hip-yaw</gearbox_reference_body>
-      <gearbox_ratio>0.0625</gearbox_ratio>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <axis2>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis2>
     </joint>
 
     <link name='right-achilles-rod'>
@@ -1115,39 +699,6 @@
       </visual>
     </link>
 
-    <link name="right-knee-reference">
-      <pose frame="">-0.049 -0.1305 0.8 -1.5708 0.7854 3.1416</pose>
-      <inertial>
-        <pose frame="">-0.000001 -0.000011 -0.024425 1.57 1.57 0</pose>
-        <mass>0.272280</mass>
-        <inertia>
-          <ixx>2.288457e-04</ixx>
-          <ixy>6.854960e-07</ixy>
-          <ixz>-4.163281e-08</ixz>
-          <iyy>0.00023115</iyy>
-          <iyz>-9.248118e-07</iyz>
-          <izz>0.00020476</izz>
-        </inertia>
-      </inertial>
-      <visual name="right-knee-reference_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.01 0.01 0.01</size>
-          </box>
-        </geometry>
-      </visual>
-    </link>
-
-    <joint name="right-knee-ip" type="revolute">
-      <parent>right-hip-pitch</parent>
-      <child>right-knee-reference</child>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
     <joint name="right-knee-op" type="revolute">
       <child>right-knee</child>
       <parent>right-hip-pitch</parent>
@@ -1163,55 +714,6 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-
-    <joint name="right-knee-joint" type="gearbox">
-      <child>right-knee</child>
-      <parent>right-knee-reference</parent>
-      <gearbox_reference_body>right-hip-pitch</gearbox_reference_body>
-      <gearbox_ratio>0.0625</gearbox_ratio>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <axis2>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis2>
-    </joint>
-
-    <link name='right-knee-spring'>
-      <pose>-0.033635 -0.1305 0.69882 -1.5708 0.7854 3.1416</pose>
-      <inertial>
-        <pose>0.0836 0.0034 0 0 0 0</pose>
-        <mass>0.186</mass>
-        <inertia>
-          <ixx>5.215e-05</ixx>
-          <iyy>0.00041205</iyy>
-          <izz>0.0003669</izz>
-          <ixy>6.87e-06</ixy>
-          <ixz>0</ixz>
-          <iyz>0</iyz>
-        </inertia>
-      </inertial>
-      <visual name="right-knee-spring_visual">
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://cassie/meshes/knee-spring.stl</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-
-    <joint name="right-knee-spring-joint" type="revolute">
-      <child>right-knee-spring</child>
-      <parent>right-knee</parent>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
 
     <link name='right-shin'>
       <pose>-0.058383 -0.1305 0.72357 -1.5708 0.7854 3.1416</pose>
@@ -1463,39 +965,6 @@
       </collision>
     </link>
 
-    <link name="right-foot-reference">
-      <pose frame="">-0.29886 -0.1305 -0.0045361 1.5708 1.3439 0</pose>
-      <inertial>
-        <pose frame="">0.00474 0.02748 0.00014 0 0 0</pose>
-        <mass>0.001</mass>
-        <inertia>
-          <ixx>9.4e-7</ixx>
-          <ixy>9.4e-9</ixy>
-          <ixz>9.4e-9</ixz>
-          <iyy>9.4e-7</iyy>
-          <iyz>9.4e-9</iyz>
-          <izz>9.4e-6</izz>
-        </inertia>
-      </inertial>
-      <visual name="right-foot-reference_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.01 0.01 0.01</size>
-          </box>
-        </geometry>
-      </visual>
-    </link>
-
-    <joint name="right-foot-ip" type="revolute">
-      <parent>right-tarsus</parent>
-      <child>right-foot-reference</child>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
     <joint name="right-foot-op" type="revolute">
       <child>right-foot</child>
       <parent>right-tarsus</parent>
@@ -1509,33 +978,6 @@
           <damping>1</damping>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
-    <joint name="right-foot-joint" type="gearbox">
-      <child>right-foot</child>
-      <parent>right-foot-reference</parent>
-      <gearbox_reference_body>right-tarsus</gearbox_reference_body>
-      <gearbox_ratio>0.02</gearbox_ratio>
-      <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <axis2>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis2>
-    </joint>
-
-    <joint name="right-shin-spring-joint" type="prismatic">
-      <pose>0.13 0.005 0 0 0 0</pose>
-      <parent>right-shin</parent>
-      <child>right-knee-spring</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-        </dynamics>
       </axis>
     </joint>
 
@@ -1554,18 +996,6 @@
       <child>right-foot</child>
       <axis>
         <xyz>0 0 1</xyz>
-      </axis>
-    </joint>
-
-    <joint name="left-shin-spring-joint" type="prismatic">
-      <pose>0.13 0.005 0 0 0 0</pose>
-      <parent>left-shin</parent>
-      <child>left-knee-spring</child>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-        </dynamics>
       </axis>
     </joint>
 
