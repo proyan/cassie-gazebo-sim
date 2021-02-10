@@ -972,7 +972,7 @@
     </joint>
 
     <joint name="right-plantar-foot-joint" type="ball">
-      <pose>0.055 0 -0.008 0 0 0</pose>
+      <pose>0.055 0 0.008 0 0 0</pose>
       <parent>right-plantar-rod</parent>
       <child>right-foot</child>
       <axis>
@@ -990,7 +990,7 @@
     </joint>
 
     <joint name="left-plantar-foot-joint" type="ball">
-      <pose>0.055 0 0.008 0 0 0</pose>
+      <pose>0.055 0 -0.008 0 0 0</pose>
       <parent>left-plantar-rod</parent>
       <child>left-foot</child>
       <axis>
