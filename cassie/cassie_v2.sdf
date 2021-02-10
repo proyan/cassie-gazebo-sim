@@ -416,7 +416,7 @@
     </joint>
 
     <link name='left-plantar-rod'>
-      <pose>-0.35937 0.11566 0.28425 1.5708 1.3639 0.1</pose>
+      <pose>-0.35937 0.11566 0.28425 1.5708 1.3439 0.0</pose>
       <inertial>
         <pose>0.17792 0 0 0 0 0</pose>
         <mass>0.1186</mass>
@@ -463,7 +463,7 @@
       <visual name="left-foot_visual">
         <geometry>
           <mesh>
-            <scale>1 1 -1</scale>
+            <scale>1 1 1</scale>
             <uri>model://cassie/meshes/foot.stl</uri>
           </mesh>
         </geometry>
@@ -876,7 +876,7 @@
     </joint>
 
     <link name='right-plantar-rod'>
-      <pose>-0.35937 -0.11566 0.28425 1.5708 1.364 -0.1</pose>
+      <pose>-0.35937 -0.11566 0.28425 1.5708 1.364 0.0</pose>
       <inertial>
         <pose>0.17792 0 0 0 0 0</pose>
         <mass>0.1186</mass>
@@ -924,7 +924,7 @@
       <visual name="right-foot_visual">
         <geometry>
           <mesh>
-            <scale>1 1 1</scale>
+            <scale>1 1 -1</scale>
             <uri>model://cassie/meshes/foot.stl</uri>
           </mesh>
         </geometry>
@@ -972,7 +972,7 @@
     </joint>
 
     <joint name="right-plantar-foot-joint" type="ball">
-      <pose>0.055 0 0.008 0 0 0</pose>
+      <pose>0.055 0 -0.008 0 0 0</pose>
       <parent>right-plantar-rod</parent>
       <child>right-foot</child>
       <axis>
@@ -990,7 +990,7 @@
     </joint>
 
     <joint name="left-plantar-foot-joint" type="ball">
-      <pose>0.055 0 -0.008 0 0 0</pose>
+      <pose>0.055 0 0.008 0 0 0</pose>
       <parent>left-plantar-rod</parent>
       <child>left-foot</child>
       <axis>
